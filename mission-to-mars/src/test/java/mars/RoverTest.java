@@ -1,10 +1,8 @@
 package mars;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RoverTest {
 
@@ -18,7 +16,7 @@ public class RoverTest {
 		// Assert
 		assertTrue(new Position(4, 4, 0).equals(sut.getPosition()));
 	}
-			
+
 	@Test
 	void doitAvancer1CaseVersNordSiTourneVersLeNord() {
 		// Arrange
