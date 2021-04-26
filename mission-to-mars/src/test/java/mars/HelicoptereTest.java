@@ -54,7 +54,7 @@ public class HelicoptereTest {
 	}
 
 	@Test
-	void roverDoitReculer1CaseVersSudSiTourneVersLeNord() {
+	void doitReculer1CaseVersSudSiTourneVersLeNord() {
 		// Arrange
 		sut = new Helicoptere(Direction.NORD, new Position(4, 4, 1));
 
