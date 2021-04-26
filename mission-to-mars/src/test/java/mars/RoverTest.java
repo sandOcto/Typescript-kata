@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RoverTest {
+class RoverTest {
 
 	ModuleMartien sut;
 
@@ -14,7 +14,7 @@ public class RoverTest {
 		sut = new Rover(Direction.NORD, new Position(4, 4, 0));
 
 		// Assert
-		assertTrue(new Position(4, 4, 0).equals(sut.getPosition()));
+		assertEquals(new Position(4, 4, 0), sut.getPosition());
 	}
 
 	@Test
@@ -26,7 +26,7 @@ public class RoverTest {
 		sut.avancer();
 
 		// Assert
-		assertTrue(new Position(4, 5, 0).equals(sut.getPosition()));
+		assertEquals(new Position(4, 5, 0), sut.getPosition());
 	}
 
 	@Test
@@ -66,7 +66,7 @@ public class RoverTest {
 	}
 
 	@Test
-	void doitReculer1CaseVersNordSiTourneVersLeNord() {
+	void doitReculer1CaseVersSudSiTourneVersLeNord() {
 		// Arrange
 		sut = new Rover(Direction.NORD, new Position(4, 4, 0));
 
@@ -74,11 +74,11 @@ public class RoverTest {
 		sut.reculer();
 
 		// Assert
-		assertTrue(new Position(4, 3, 0).equals(sut.getPosition()));
+		assertEquals(new Position(4, 3, 0), sut.getPosition());
 	}
 
 	@Test
-	void doitReculer1CaseVersSudSiTourneVersLeSud() {
+	void doitReculer1CaseVersNordSiTourneVersLeSud() {
 		// Arrange
 		sut = new Rover(Direction.SUD, new Position(4, 4, 0));
 
@@ -90,7 +90,7 @@ public class RoverTest {
 	}
 
 	@Test
-	void doitReculer1CaseVersOuestSiTourneVersLOuest() {
+	void doitReculer1CaseVersEstSiTourneVersLOuest() {
 		// Arrange
 		sut = new Rover(Direction.OUEST, new Position(4, 4, 0));
 
@@ -102,7 +102,7 @@ public class RoverTest {
 	}
 
 	@Test
-	void doitReculer1CaseVersEstSiTourneVersLEst() {
+	void doitReculer1CaseVersOuestSiTourneVersLEst() {
 		// Arrange
 		sut = new Rover(Direction.EST, new Position(4, 4, 0));
 
@@ -116,7 +116,7 @@ public class RoverTest {
 	@Test
 	void neDoitPasMonter() {
 		// Arrange
-		sut = new Rover(Direction.EST, new Position(4, 4, 0));
+		sut = new Rover(Direction.NORD, new Position(4, 4, 0));
 
 		// Act + Assert
 		assertThrows(UnsupportedOperationException.class, () -> sut.monter());
@@ -125,7 +125,7 @@ public class RoverTest {
 	@Test
 	void neDoitPasDescendre() {
 		// Arrange
-		sut = new Rover(Direction.EST, new Position(4, 4, 3));
+		sut = new Rover(Direction.SUD, new Position(4, 4, 3));
 
 		// Act + Assert
 		assertThrows(UnsupportedOperationException.class, () -> sut.descendre());

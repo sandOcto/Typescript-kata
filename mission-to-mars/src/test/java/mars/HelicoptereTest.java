@@ -1,9 +1,8 @@
 package mars;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 public class HelicoptereTest {
 
@@ -15,7 +14,7 @@ public class HelicoptereTest {
 		sut = new Helicoptere(Direction.NORD, new Position(4, 4, 0));
 
 		// Assert
-		assertTrue(new Position(4, 4, 0).equals(sut.getPosition()));
+		assertEquals(new Position(4, 4, 0), sut.getPosition());
 	}
 
 	@Test
@@ -27,7 +26,7 @@ public class HelicoptereTest {
 		sut.avancer();
 
 		// Assert
-		assertTrue(new Position(4, 5, 1).equals(sut.getPosition()));
+		assertEquals(new Position(4, 5, 1), sut.getPosition());
 	}
 
 	@Test
@@ -55,7 +54,7 @@ public class HelicoptereTest {
 	}
 
 	@Test
-	void roverDoitReculer1CaseVersNordSiTourneVersLeNord() {
+	void roverDoitReculer1CaseVersSudSiTourneVersLeNord() {
 		// Arrange
 		sut = new Helicoptere(Direction.NORD, new Position(4, 4, 1));
 
@@ -63,11 +62,11 @@ public class HelicoptereTest {
 		sut.reculer();
 
 		// Assert
-		assertTrue(new Position(4, 3, 1).equals(sut.getPosition()));
+		assertEquals(new Position(4, 3, 1), sut.getPosition());
 	}
 
 	@Test
-	void doitReculer1CaseVersSudSiTourneVersLeSud() {
+	void doitReculer1CaseVersNordSiTourneVersLeSud() {
 		// Arrange
 		sut = new Helicoptere(Direction.SUD, new Position(4, 4, 1));
 
@@ -79,7 +78,7 @@ public class HelicoptereTest {
 	}
 
 	@Test
-	void doitReculer1CaseVersOuestSiTourneVersLOuest() {
+	void doitReculer1CaseVersEstSiTourneVersLOuest() {
 		// Arrange
 		sut = new Helicoptere(Direction.OUEST, new Position(4, 4, 1));
 
@@ -91,7 +90,7 @@ public class HelicoptereTest {
 	}
 
 	@Test
-	void doitReculer1CaseVersEstSiTourneVersLEst() {
+	void doitReculer1CaseVersOuestSiTourneVersLEst() {
 		// Arrange
 		sut = new Helicoptere(Direction.EST, new Position(4, 4, 1));
 
@@ -105,7 +104,7 @@ public class HelicoptereTest {
 	@Test
 	void doitMonter1CaseVersLeHaut() {
 		// Arrange
-		sut = new Helicoptere(Direction.EST, new Position(4, 4, 0));
+		sut = new Helicoptere(Direction.NORD, new Position(4, 4, 0));
 
 		// Act
 		sut.monter();
@@ -117,7 +116,7 @@ public class HelicoptereTest {
 	@Test
 	void doitDescendre1CaseVersLeBas() {
 		// Arrange
-		sut = new Helicoptere(Direction.EST, new Position(4, 4, 3));
+		sut = new Helicoptere(Direction.SUD, new Position(4, 4, 3));
 
 		// Act
 		sut.descendre();
