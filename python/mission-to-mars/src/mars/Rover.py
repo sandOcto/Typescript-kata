@@ -4,13 +4,11 @@ from src.mars.Position import Position
 
 
 class Rover(ModuleMartien):
-    _direction: Direction
-    position: Position
-    _pret_pour_recuperation: bool = False
 
     def __init__(self, direction: Direction, position: Position):
         self._direction = direction
         self.position = position
+        self._pret_pour_recuperation: bool = False
 
     def get_position(self) -> Position:
         return self.position
