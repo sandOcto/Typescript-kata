@@ -31,8 +31,8 @@ namespace mission_to_mars
             {
                 Direction.NORD => Position with { Y = Position.Y + 1 },
                 Direction.SUD => Position with { Y = Position.Y - 1 },
-                Direction.EST => Position with { X = Position.Y + 1 },
-                _ => Position with { X = Position.Y - 1 },
+                Direction.OUEST => Position with { X = Position.X - 1 },
+                _ => Position with { X = Position.X + 1 },
             };
         }
 
@@ -43,8 +43,8 @@ namespace mission_to_mars
             {
                 Direction.NORD => Position with { Y = Position.Y - 1 },
                 Direction.SUD => Position with { Y = Position.Y + 1 },
-                Direction.EST => Position with { X = Position.Y - 1 },
-                _ => Position with { X = Position.Y + 1 },
+                Direction.OUEST => Position with { X = Position.X + 1 },
+                _ => Position with { X = Position.X - 1 },
             };
         }
 
