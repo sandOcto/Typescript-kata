@@ -1,0 +1,16 @@
+{
+  "name": "mission-to-mars-non-solid",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest",
+    "test:coverage": "yarn vitest --coverage",
+    "tsc": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/assert": "^1.5.9",
+    "@vitest/coverage-istanbul": "^0.34.6",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  }
+}
