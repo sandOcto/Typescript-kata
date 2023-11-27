@@ -20,14 +20,14 @@ namespace mission_to_mars.Tests
         {
             // Arrange
             sut = new Sonde();
-            IModuleMartien curiosity = new Rover(Direction.NORD, new Position(4, 4, 0));
+            IModuleMartien perseverance = new Rover(Direction.NORD, new Position(4, 4, 0));
 
             // Act
-            sut.PreparerRécupération(curiosity);
+            sut.PreparerRécupération(perseverance);
 
             //Assert
-            curiosity.IsPretPourRecuperation.ShouldBe(true);
-            curiosity.Position.ShouldBe(new Position(4, 4, 0), "Récupérer curiosity ne doit pas changer sa position");
+            perseverance.IsPretPourRecuperation.ShouldBe(true);
+            perseverance.Position.ShouldBe(new Position(4, 4, 0), "Récupérer perseverance ne doit pas changer sa position");
 
         }
 

@@ -10,14 +10,14 @@ class TestSonde:
     def test_rover_doit_etre_recupere(self):
         # Arrange
         sut = Sonde()
-        curiosity = Rover(Direction.NORD, Position(4, 4, 0))
+        perseverance = Rover(Direction.NORD, Position(4, 4, 0))
 
         # Act
-        sut.preparer_recuperation(curiosity)
+        sut.preparer_recuperation(perseverance)
 
         # Assert
-        assert curiosity.is_pret_pour_recuperation() is True
-        assert Position(4, 4, 0) == curiosity.get_position()
+        assert perseverance.is_pret_pour_recuperation() is True
+        assert Position(4, 4, 0) == perseverance.get_position()
 
     def test_helicoptere_doit_etre_recupere(self):
         # Arrange
